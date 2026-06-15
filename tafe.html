@@ -1,110 +1,302 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAFE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAFE — Lucas Garcia Lima</title>
 
-    <!-- MESMO CSS DO PORTFÓLIO -->
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .project-hero {
+      padding: 8rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+    }
+
+    .back-link {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-mono);
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      transition: .2s;
+    }
+
+    .back-link:hover {
+      color: var(--purple-light);
+      gap: .75rem;
+    }
+
+    .project-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+
+    .project-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: .6rem 0 .75rem;
+      background: linear-gradient(135deg, #fff 40%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .project-hero p {
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    .project-section {
+      padding: 3rem 2rem;
+    }
+
+    .project-section .container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .project-section h2 {
+      font-family: var(--font-display);
+      margin-bottom: 1rem;
+    }
+
+    .project-section p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .project-section strong {
+      color: var(--text);
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .screenshot-card {
+      display: block;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,58,237,.5);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 2rem 5rem;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html">
+        <span class="nav-logo">LGL<span class="accent">.</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#experiencia">Experiência</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="index.html#contato" class="nav-cta">Contato</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="project-hero">
+    <div class="project-hero-bg"></div>
+
+    <div class="project-hero-content">
+      <a href="index.html#projetos" class="back-link">
+        ← voltar aos projetos
+      </a>
+
+      <span class="section-tag">Aplicativo Mobile</span>
+
+      <h1>TAFE</h1>
+
+      <p>
+        Aplicativo de Segurança do Trabalho voltado ao registro e monitoramento
+        de ocorrências em ambientes da construção civil.
+      </p>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="project-section">
     <div class="container">
 
-        <!-- HEADER -->
-        <header>
-            <h1>TAFE</h1>
-            <p>Aplicativo de Segurança do Trabalho</p>
-        </header>
+      <h2>Sobre o Projeto</h2>
 
-        <!-- DESCRIÇÃO -->
-        <section>
-            <h2>Sobre o Projeto</h2>
+      <p>
+        O TAFE (Terminal de Anotação e Fiscalização de Eventos) é um aplicativo
+        mobile desenvolvido com foco na segurança do trabalho na construção civil.
+      </p>
 
-            <p>
-                O TAFE (Terminal de Anotação e Fiscalização de Eventos) é um aplicativo mobile
-                desenvolvido com foco na segurança do trabalho na construção civil.
-            </p>
+      <p>
+        A plataforma permite o registro e monitoramento de acidentes e ocorrências em campo,
+        facilitando o acompanhamento de eventos e contribuindo para um ambiente de trabalho mais seguro.
+      </p>
 
-            <p>
-                A plataforma permite o registro e monitoramento de acidentes e ocorrências em campo,
-                facilitando o acompanhamento de eventos e contribuindo para um ambiente de trabalho mais seguro.
-            </p>
+      <p>
+        A solução busca aumentar a transparência entre colaboradores e empresas,
+        garantindo melhor organização das informações e dos registros realizados.
+      </p>
 
-            <p>
-                A solução visa garantir os direitos dos trabalhadores, além de aumentar a transparência
-                entre colaboradores e empresas por meio de um sistema acessível e organizado.
-            </p>
+      <p>
+        <strong>Tecnologias utilizadas:</strong>
+        Android, Java e XML.
+      </p>
 
-            <p><strong>Tecnologias utilizadas:</strong> Android, Java, XML</p>
-        </section>
-
-        <!-- GITHUB -->
-        <section>
-            <h2>Repositório</h2>
-
-            <p>
-                Acesse o código do projeto no Snack:
-            </p>
-
-            <p>
-                <a href="https://snack.expo.dev/@smilofc/tafe_correto?platform=web" target="_blank">
-                    Ver no Snack →
-                </a>
-            </p>
-        </section>
-
-        <!-- PARTICIPAÇÃO -->
-        <section>
-            <h2>Minha Participação</h2>
-
-            <p>
-                Atuei no desenvolvimento da interface do aplicativo, utilizando XML para estruturar
-                as telas e garantir uma navegação intuitiva para o usuário.
-            </p>
-
-            <p>
-                Também participei da implementação das funcionalidades principais relacionadas ao
-                registro de ocorrências e organização das informações no sistema.
-            </p>
-
-            <p>
-                O projeto foi desenvolvido com foco em usabilidade e clareza das informações,
-                visando facilitar o uso em ambientes de trabalho dinâmicos como canteiros de obra.
-            </p>
-        </section>
-
-        <!-- SCREENSHOTS -->
-        <section>
-            <h2>Screenshots</h2>
-
-            <div class="card-container">
-
-                <div class="card">
-                    <a href="img/tafe1.png" target="_blank">
-                        <img src="img/tafe1.png" class="card-img" style="width:100%; border-radius:6px;" >
-                    </a>
-                </div>
-
-                <div class="card">
-                    <a href="img/tafe2.png" target="_blank">
-                        <img src="img/tafe2.png" class="card-img" style="width:100%; border-radius:6px;" >
-                    </a>
-                </div>
-
-
-            </div>
-        </section>
-
-        <section>
-            <div class="actions">
-                <a href="#" class="btn">⬆ Voltar ao Topo</a>
-                <a href="index.html" class="btn">⬅ Voltar ao Inicio</a>
-            </div>
-        </section>
+      <div class="tech-tags">
+        <span>Android</span>
+        <span>Java</span>
+        <span>XML</span>
+      </div>
 
     </div>
+  </section>
+
+  <!-- REPOSITÓRIO -->
+  <section class="project-section">
+    <div class="container">
+
+      <h2>Repositório</h2>
+
+      <p>
+        Acesse o projeto hospedado no Snack:
+      </p>
+
+      <a href="https://snack.expo.dev/@smilofc/tafe_correto?platform=web"
+         target="_blank"
+         class="btn btn-primary">
+        Ver no Snack
+      </a>
+
+    </div>
+  </section>
+
+  <!-- PARTICIPAÇÃO -->
+  <section class="project-section">
+    <div class="container">
+
+      <h2>Minha Participação</h2>
+
+      <p>
+        Atuei no desenvolvimento da interface do aplicativo,
+        utilizando XML para estruturar as telas e criar uma navegação intuitiva.
+      </p>
+
+      <p>
+        Também participei da implementação das funcionalidades relacionadas ao
+        registro de ocorrências e organização das informações do sistema.
+      </p>
+
+      <p>
+        O foco principal foi oferecer uma experiência simples e eficiente para
+        utilização em ambientes de trabalho dinâmicos.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="project-section">
+    <div class="container">
+
+      <h2>Screenshots</h2>
+
+      <div class="screenshot-grid">
+
+        <a href="img/tafe1.png" target="_blank" class="screenshot-card">
+          <img src="img/tafe1.png" alt="Tela do TAFE">
+        </a>
+
+        <a href="img/tafe2.png" target="_blank" class="screenshot-card">
+          <img src="img/tafe2.png" alt="Tela do TAFE">
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AÇÕES -->
+  <div class="project-actions">
+    <a href="#nav" class="btn btn-outline">⬆ Voltar ao topo</a>
+    <a href="index.html" class="btn btn-outline">⬅ Voltar ao início</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Feito por Lucas Garcia Lima · <span class="mono">2026</span></p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
+```

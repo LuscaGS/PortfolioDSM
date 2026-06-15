@@ -1,94 +1,250 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toy Story</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toy Story — Lucas Garcia Lima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ---- Específico das páginas de projeto ---- */
+    .project-hero {
+      padding: 8rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+    }
+    .back-link {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .back-link:hover { color: var(--purple-light); gap: 0.75rem; }
 
-    <!-- MESMO CSS DO PORTFÓLIO -->
-    <link rel="stylesheet" href="css/style.css">
+    .project-hero-content { position: relative; z-index: 2; max-width: 760px; }
+    .project-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0.6rem 0 0.75rem;
+      background: linear-gradient(135deg, #fff 40%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .project-hero p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    /* ---- Seções de conteúdo ---- */
+    .project-section { padding: 3rem 2rem; }
+    .project-section .container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .project-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .project-section p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .project-section p:last-child { margin-bottom: 0; }
+    .project-section strong { color: var(--text); }
+    .project-section .tech-tags { margin-top: 1.25rem; }
+
+    /* ---- Screenshots ---- */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .screenshot-card {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .screenshot-card:hover {
+      border-color: rgba(124,58,237,0.5);
+      transform: translateY(-4px);
+    }
+    .screenshot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* ---- Ações finais ---- */
+    .project-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      padding: 1rem 2rem 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-
-        <!-- HEADER -->
-        <header>
-            <h1>Toy Story</h1>
-            <p>Loja de brinquedos digital</p>
-        </header>
-
-        <!-- DESCRIÇÃO -->
-        <section>
-            <h2>Sobre o Projeto</h2>
-
-            <p>O projeto Toy Story é uma aplicação web desenvolvida com o objetivo de simular o funcionamento de uma loja de brinquedos, permitindo o gerenciamento e a organização de produtos de forma prática e estruturada.</p>
-
-            <p>A aplicação é dividida em duas camadas principais: frontend e backend. O frontend foi desenvolvido utilizando Vue.js com Vite, proporcionando uma interface moderna, rápida e responsiva, além do uso da biblioteca SweetAlert2 para exibição de alertas personalizados e melhor interação com o usuário.</p>
-
-            <p>O backend foi desenvolvido com Java e Spring Boot, sendo responsável pelo processamento das requisições, implementação das regras de negócio e integração com o banco de dados. A persistência dos dados é realizada utilizando JPA/Hibernate, garantindo uma comunicação eficiente com o banco MySQL.</p>
-
-            <p>O sistema permite operações como cadastro, consulta, atualização e remoção de dados, estruturando uma base sólida para o gerenciamento das informações da aplicação.</p>
-
-            <p><strong>Tecnologias utilizadas:</strong> Vue.js, Vite, JavaScript, SweetAlert2, Java, Spring Boot, Spring Data JPA, Hibernate e MySQL.</p>
-        </section>
-
-        <!-- GITHUB -->
-        <section>
-            <h2>Repositório</h2>
-
-            <p>
-                Acesse o código do projeto no GitHub:
-            </p>
-
-            <p>
-                <a href="https://github.com/Loja-Brinquedo-Fatec" target="_blank">
-                    Ver no GitHub →
-                </a>
-            </p>
-        </section>
-
-        <!-- PARTICIPAÇÃO -->
-        <section>
-            <h2>Minha Participação</h2>
-
-            <p>Fui responsável pela criação e configuração do banco de dados do projeto, estruturando as tabelas e definindo os relacionamentos necessários para o funcionamento do sistema.</p>
-
-            <p>Também realizei a integração do banco de dados com o backend, utilizando MySQL e ferramentas de persistência para garantir o armazenamento e a manipulação correta das informações.</p>
-
-            <p>Além disso, participei da modelagem dos dados, pensando na organização, consistência e eficiência das operações realizadas pela aplicação.</p>
-        </section>
-
-        <!-- SCREENSHOTS -->
-        <section>
-            <h2>Screenshots</h2>
-
-            <div class="card-container">
-
-                <div class="card">
-                    <a href="img/toystory1.png" target="_blank">
-                        <img src="img/toystory1.png" class="card-img" style="width:100%; border-radius:6px;" >
-                    </a>
-                </div>
-
-                <div class="card">
-                    <a href="img/toystory2.png" target="_blank">
-                        <img src="img/toystory2.png" class="card-img" style="width:100%; border-radius:6px;" >
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- AÇÕES -->
-        <section>
-            <div class="actions">
-                <a href="#" class="btn">⬆ Voltar ao topo</a>
-                <a href="index.html" class="btn">⬅ Voltar ao Inicio</a>
-            </div>
-        </section>
-
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html"><span class="nav-logo">LGL<span class="accent">.</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#experiencia">Experiência</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="index.html#contato" class="nav-cta">Contato</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
+  <!-- HERO DO PROJETO -->
+  <section class="project-hero">
+    <div class="project-hero-bg"></div>
+    <div class="project-hero-content">
+      <a href="index.html#projetos" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        voltar aos projetos
+      </a>
+      <span class="section-tag">E-commerce</span>
+      <h1>Toy Story</h1>
+      <p>Loja de brinquedos digital com catálogo de produtos e experiência de compra completa, desenvolvida com foco em organização de dados e integração full-stack.</p>
+    </div>
+  </section>
+
+  <!-- SOBRE O PROJETO -->
+  <section class="project-section">
+    <div class="container">
+      <h2>Sobre o Projeto</h2>
+      <p>
+        O projeto Toy Story é uma aplicação web desenvolvida com o objetivo de simular o funcionamento de uma loja de brinquedos, permitindo o gerenciamento e a organização de produtos de forma prática e estruturada.
+      </p>
+      <p>
+        A aplicação é dividida em duas camadas principais: frontend e backend. O frontend foi desenvolvido utilizando Vue.js com Vite, proporcionando uma interface moderna, rápida e responsiva, além do uso da biblioteca SweetAlert2 para exibição de alertas personalizados e melhor interação com o usuário.
+      </p>
+      <p>
+        O backend foi desenvolvido com Java e Spring Boot, sendo responsável pelo processamento das requisições, implementação das regras de negócio e integração com o banco de dados. A persistência dos dados é realizada utilizando JPA/Hibernate, garantindo uma comunicação eficiente com o banco MySQL.
+      </p>
+      <p>
+        O sistema permite operações como cadastro, consulta, atualização e remoção de dados, estruturando uma base sólida para o gerenciamento das informações da aplicação.
+      </p>
+      <p><strong>Tecnologias utilizadas:</strong> Vue.js, Vite, JavaScript, SweetAlert2, Java, Spring Boot, Spring Data JPA, Hibernate e MySQL.</p>
+      <div class="tech-tags">
+        <span>Vue.js</span>
+        <span>Vite</span>
+        <span>JavaScript</span>
+        <span>SweetAlert2</span>
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Spring Data JPA</span>
+        <span>Hibernate</span>
+        <span>MySQL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPOSITÓRIO -->
+  <section class="project-section">
+    <div class="container">
+      <h2>Repositório</h2>
+      <p>Acesse o código completo do projeto no GitHub:</p>
+      <a href="https://github.com/Loja-Brinquedo-Fatec" target="_blank" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        Ver no GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- MINHA PARTICIPAÇÃO -->
+  <section class="project-section">
+    <div class="container">
+      <h2>Minha Participação</h2>
+      <p>
+        Fui responsável pela criação e configuração do banco de dados do projeto, estruturando as tabelas e definindo os relacionamentos necessários para o funcionamento do sistema.
+      </p>
+      <p>
+        Também realizei a integração do banco de dados com o backend, utilizando MySQL e ferramentas de persistência para garantir o armazenamento e a manipulação correta das informações.
+      </p>
+      <p>
+        Além disso, participei da modelagem dos dados, pensando na organização, consistência e eficiência das operações realizadas pela aplicação.
+      </p>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="project-section">
+    <div class="container">
+      <h2>Screenshots</h2>
+      <div class="screenshot-grid">
+        <a href="img/toystory1.png" target="_blank" class="screenshot-card">
+          <img src="img/toystory1.png" alt="Screenshot do Toy Story - 1">
+        </a>
+        <a href="img/toystory2.png" target="_blank" class="screenshot-card">
+          <img src="img/toystory2.png" alt="Screenshot do Toy Story - 2">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AÇÕES -->
+  <div class="project-actions">
+    <a href="#nav" class="btn btn-outline">⬆ Voltar ao topo</a>
+    <a href="index.html" class="btn btn-outline">⬅ Voltar ao início</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Feito por Lucas Garcia Lima · <span class="mono">2026</span></p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

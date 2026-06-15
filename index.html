@@ -1,88 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio DSM - Lucas</title>
-
-    <!-- LINK DO CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Garcia Lima — Dev Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://github.com/LuscaGS.png" alt="Foto do Aluno" class="profile-img">
-            <h1>Lucas Garcia</h1>
-            <p><a href="https://github.com/LuscaGS" target="_blank">GitHub</a></p>
-            <p><a href="https://www.linkedin.com/in/lucas-garcia-lima/" target="_blank">LinkedIn</a></p>
-        </header>
 
-        <section>
-            <h2>Dados Acadêmicos:</h2>
-            <p><strong>Instituição:</strong> Fatec Itaquera - Professor Miguel Reale </p>
-            <p><strong>Curso:</strong> Desenvolvimento de Software Multiplataforma </p>
-            <p><strong>Início:</strong> Junho/2023</p>
-            <p><strong>Previsão de Conclusão:</strong> Julho/2026</p>
-        </section>
-
-        <section>
-            <h2>Experiência Profissional:</h2>
-            <p><strong>Empresa:</strong> Fatec Itaquera - Professor Miguel Reale (Início: Abril/2026)</p>
-            <p><strong>Cargo:</strong> Estagiário de Desenvolvimento</p>
-            <p><strong>Descrição:</strong> Desenvolvimento full-stack com NestJS, React e React Native, além de modelagem de dados com Prisma e PostgreSQL.</p>
-        </section>
-
-        <section>
-            <h2>Cursos de Extensão:</h2>
-            <ul>
-                <li><strong>Engaging Stakeholders for Success: </strong> Cisco - Set/2025 - 6 a 8 horas</li>
-                <p>Curso focado em comunicação e estratégias para engajar stakeholders e alinhar expectativas em projetos.</p>
-                <li><strong>AWS Academy Graduate - Generative AI Foundations: </strong> AWS - Jun/2025 - 20 a 40 horas</li>
-                <p>Formação introdutória em inteligência artificial generativa, abordando conceitos, aplicações e uso de serviços da AWS.</p>
-                <li><strong>Endpoint Security: </strong> Cisco - Mar/2024 - 15 a 20 horas</li>
-                <p>Curso voltado à proteção de dispositivos finais, com práticas de segurança contra ameaças e vulnerabilidades.</p>
-                <li><strong>Introduction to Data Science: </strong> Cisco - Out/2023 - 10 a 15 horas</li>
-                <p>Introdução aos fundamentos de ciência de dados, incluindo análise, interpretação e uso de dados para tomada de decisão.</p>
-                <li><strong>Cybersecurity Essentials: </strong> Cisco - Set/2023 - 30 a 40 horas</li>
-                <p>Curso abrangente sobre princípios de cibersegurança, ameaças digitais e medidas de proteção em ambientes tecnológicos.</p>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Projetos:</h2>
-            <div class="card-container">
-                
-                <div class="card">
-                    <h3>PROVERDE</h3>
-                    <p>Sistema desenvolvido para conscientização ambiental.</p>
-                    <a href="proverde.html">Ver detalhes →</a>
-                </div>
-
-                <div class="card">
-                    <h3>BookRoom</h3>
-                    <p>Sistema de Gerenciamento de Reservas de Salas</p>
-                    <a href="bookroom.html">Ver detalhes →</a>
-                </div>
-
-                <div class="card">
-                    <h3>Toy Story</h3>
-                    <p>Loja de brinquedos digital</p>
-                    <a href="lojabrinquedo.html">Ver detalhes →</a>
-                </div>
-
-                <div class="card">
-                    <h3>VivaTShirt</h3>
-                    <p>Plataforma de E-commerce de Vestuário</p>
-                    <a href="vivatshirt.html">Ver detalhes →</a>
-                </div>
-                
-                <div class="card">
-                    <h3>TAFE</h3>
-                    <p>Aplicativo de Segurança do Trabalho</p>
-                    <a href="tafe.html">Ver detalhes →</a>
-                </div>
-            </div>
-        </section>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">LGL<span class="accent">.</span></span>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato" class="nav-cta">Contato</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-photo-wrap">
+        <img src="https://github.com/LuscaGS.png" alt="Lucas Garcia Lima" class="hero-photo">
+        <div class="hero-photo-ring"></div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-eyebrow"><span class="terminal-dot"></span> disponível para oportunidades</p>
+        <h1 class="hero-name">Lucas Garcia Lima</h1>
+        <p class="hero-role"><span class="mono">&gt; </span><span id="typewriter"></span><span class="cursor">|</span></p>
+        <p class="hero-desc">Desenvolvedor full-stack cursando DSM na Fatec Itaquera. Construo do banco de dados ao mobile com NestJS, React e React Native.</p>
+        <div class="hero-actions">
+          <a href="https://github.com/LuscaGS" target="_blank" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/lucas-garcia-lima/" target="_blank" class="btn btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE / ACADEMIA -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">01 / sobre</span>
+        <h2>Formação & Habilidades</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="about-card-icon">🎓</div>
+          <h3>Dados Acadêmicos</h3>
+          <p class="about-inst">Fatec Itaquera — Professor Miguel Reale</p>
+          <p class="about-course">Desenvolvimento de Software Multiplataforma</p>
+          <div class="about-dates">
+            <span>Jun/2023</span>
+            <div class="date-bar">
+              <div class="date-bar-fill" style="width: 85%"></div>
+            </div>
+            <span>Jul/2026</span>
+          </div>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="about-card-icon">🌐</div>
+          <h3>Idiomas</h3>
+          <div class="lang-list">
+            <div class="lang-item">
+              <span class="lang-name">Português</span>
+              <span class="lang-level native">Nativo</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Inglês</span>
+              <span class="lang-level fluent">Fluente</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">Espanhol</span>
+              <span class="lang-level basic">Básico</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card about-card-wide reveal">
+          <div class="about-card-icon">📚</div>
+          <h3>Cursos de Extensão</h3>
+          <div class="courses-list">
+            <div class="course-item">
+              <div class="course-badge">AWS</div>
+              <div class="course-info">
+                <strong>Generative AI Foundations</strong>
+                <span>AWS Academy Graduate — Jun/2025 · 20–40h</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-badge cisco">Cisco</div>
+              <div class="course-info">
+                <strong>Engaging Stakeholders for Success</strong>
+                <span>Set/2025 · 6–8h</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-badge cisco">Cisco</div>
+              <div class="course-info">
+                <strong>Endpoint Security</strong>
+                <span>Mar/2024 · 15–20h</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-badge cisco">Cisco</div>
+              <div class="course-info">
+                <strong>Cybersecurity Essentials</strong>
+                <span>Set/2023 · 30–40h</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-badge cisco">Cisco</div>
+              <div class="course-info">
+                <strong>Introduction to Data Science</strong>
+                <span>Out/2023 · 10–15h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section class="section section-alt" id="experiencia">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">02 / experiência</span>
+        <h2>Experiência Profissional</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Estagiário de Desenvolvimento</h3>
+                <p class="timeline-company">Fatec Itaquera — Professor Miguel Reale</p>
+              </div>
+              <span class="timeline-date">Abr/2026 — atual</span>
+            </div>
+            <p class="timeline-desc">Desenvolvimento full-stack com NestJS, React e React Native, além de modelagem de dados com Prisma e PostgreSQL.</p>
+            <div class="tech-tags">
+              <span>NestJS</span>
+              <span>React</span>
+              <span>React Native</span>
+              <span>Prisma</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="section" id="projetos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">03 / projetos</span>
+        <h2>O que eu construí</h2>
+      </div>
+      <div class="projects-grid">
+
+        <a href="proverde.html" class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-tag">Web App</div>
+            <h3>PROVERDE</h3>
+            <p>Sistema desenvolvido para conscientização ambiental e gestão sustentável.</p>
+            <div class="project-footer">
+              <span class="project-link">Ver detalhes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </a>
+
+        <a href="bookroom.html" class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-tag">Sistema</div>
+            <h3>BookRoom</h3>
+            <p>Sistema de Gerenciamento de Reservas de Salas com controle de disponibilidade.</p>
+            <div class="project-footer">
+              <span class="project-link">Ver detalhes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </a>
+
+        <a href="lojabrinquedo.html" class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-tag">E-commerce</div>
+            <h3>Toy Story</h3>
+            <p>Loja de brinquedos digital com catálogo de produtos e experiência de compra.</p>
+            <div class="project-footer">
+              <span class="project-link">Ver detalhes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </a>
+
+        <a href="vivatshirt.html" class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-tag">E-commerce</div>
+            <h3>VivaTShirt</h3>
+            <p>Plataforma de E-commerce de Vestuário com vitrine e fluxo de compra completo.</p>
+            <div class="project-footer">
+              <span class="project-link">Ver detalhes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </a>
+
+        <a href="tafe.html" class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-tag">Mobile</div>
+            <h3>TAFE</h3>
+            <p>Aplicativo de Segurança do Trabalho para monitoramento e gestão de riscos.</p>
+            <div class="project-footer">
+              <span class="project-link">Ver detalhes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </a>
+
+        <a href="smarthome.html" class="project-card reveal">
+          <div class="project-card-inner">
+            <div class="project-tag">Projeto Multiplataforma</div>
+            <h3>SmartHouse</h3>
+            <p>Plataforma de automação residencial com API em Kotlin,
+  autenticação JWT e integração MQTT com dispositivos ESP32.</p>
+            <div class="project-footer">
+              <span class="project-link">Ver detalhes <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+          <div class="project-glow"></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section section-alt" id="contato">
+    <div class="container">
+      <div class="contact-wrap reveal">
+        <span class="section-tag">04 / contato</span>
+        <h2>Vamos conversar?</h2>
+        <p class="contact-desc">Estou aberto a estágios, projetos freelance e oportunidades de trabalho. Me manda uma mensagem!</p>
+        <div class="contact-links">
+          <a href="https://github.com/LuscaGS" target="_blank" class="contact-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            github.com/LuscaGS
+          </a>
+          <a href="https://www.linkedin.com/in/lucas-garcia-lima/" target="_blank" class="contact-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            lucas-garcia-lima
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Feito por Lucas Garcia Lima · <span class="mono">2026</span></p>
+  </footer>
+
+  <script>
+    // NAV scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+
+    // Typewriter
+    const roles = ['Desenvolvedor Full-Stack', 'React & React Native Dev', 'NestJS + PostgreSQL', 'DSM @ Fatec Itaquera'];
+    let roleIndex = 0, charIndex = 0, deleting = false;
+    const tw = document.getElementById('typewriter');
+
+    function type() {
+      const current = roles[roleIndex];
+      if (!deleting) {
+        tw.textContent = current.slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          deleting = true;
+          setTimeout(type, 1800);
+          return;
+        }
+      } else {
+        tw.textContent = current.slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+      setTimeout(type, deleting ? 40 : 70);
+    }
+    setTimeout(type, 800);
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
